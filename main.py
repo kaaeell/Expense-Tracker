@@ -238,6 +238,24 @@ def monthly_report():
     print(f"Grand Total: ${total_all:.2f}\n")
 
 
+def today_summary():
+    """Display expenses and spending summary for today."""
+    expenses = load_expenses()
+    today = datetime.now().strftime("%Y-%m-%d")
+    today_expenses = [exp for exp in expenses if exp['date'].startswith(today)]
+    
+    if not today_expenses:
+        print(f"No expenses recorded for today ({today}).\n")
+        return
+    
+    print(f"\n--- Today's Summary ({today}) ---")
+    total = 0
+    for expense in today_expenses:
+        print(f"{expense['name']}: ${expense['amount']:.2f} [{expense['category']}]")
+        total += expense['amount']
+    print(f"Today's Total: ${total:.2f}\n")
+
+
 def main():
     """Main function to run the expense tracker."""
     print("\n=== Expense Tracker ===")
@@ -253,9 +271,10 @@ def main():
         print("6. Search expenses")
         print("7. Spending by category")
         print("8. Monthly report")
-        print("9. Clear all expenses")
-        print("10. Exit")
-        choice = input("Enter your choice (1-10): ").strip()
+        print("9. Today's summary")
+        print("10. Clear all expenses")
+        print("11. Exit")
+        choice = input("Enter your choice (1-11): ").strip()
         
         if choice == "1":
             add_expense()
@@ -274,12 +293,14 @@ def main():
         elif choice == "8":
             monthly_report()
         elif choice == "9":
-            clear_expenses()
+            today_summary()
         elif choice == "10":
+            clear_expenses()
+        elif choice == "11":
             print("Thanks for using the Expense Tracker. Goodbye!")
             break
         else:
-            print("Invalid choice. Please enter 1-10.\n")
+            print("Invalid choice. Please enter 1-11.\n")
 
 
 if __name__ == "__main__":

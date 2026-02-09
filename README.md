@@ -10,6 +10,7 @@ A powerful command-line application to track, manage, and analyze your daily exp
 - **Search Expenses** - Find expenses by keyword (NEW!)
 - **Spending by Category** - View expense breakdown across categories (NEW!)
 - **Monthly Report** - Analyze spending trends by month (NEW!)
+- **Today's Summary** - View all expenses and total spending for today (NEW!)
 - **Set Budget Limit** - Define a monthly budget limit to track spending
 - **Check Budget** - View current spending against your budget with warnings
 - **Clear Expenses** - Delete all expenses at once
@@ -45,8 +46,9 @@ python main.py
 6. **Search Expenses** - Find expenses by keyword (NEW!)
 7. **Spending by Category** - See how much you've spent in each category (NEW!)
 8. **Monthly Report** - View your spending trends by month (NEW!)
-9. **Clear All Expenses** - Delete all expenses (confirmation required)
-10. **Exit** - Close the application
+9. **Today's Summary** - View all expenses recorded today (NEW!)
+10. **Clear All Expenses** - Delete all expenses (confirmation required)
+11. **Exit** - Close the application
 
 ## Categories
 
